@@ -21,10 +21,10 @@ else{
 
     $dbh->disconnect;
 
-    foreach my $row (@array) {
-        print "Name: $row";
+    if(@array != 0){
         print "Location: ./inicio.html \n\n";
     }
-    print "Location: ../login2.html \n\n";
-
+    else{
+        print "Location: ../login2.html \n\n";
+    }
 }
