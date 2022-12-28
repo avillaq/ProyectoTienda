@@ -22,7 +22,12 @@ else{
     $dbh->disconnect;
 
     if(@array != 0){
-        print "Location: ./inicio.html \n\n";
+        if($array[0] eq "admin" && $array[1] eq "admin"){
+            print "Location: ./inicioAdmin.html \n\n";
+        }
+        else{
+            print "Location: ./inicio.html \n\n";
+        }
     }
     else{
         print "Location: ../login2.html \n\n";
