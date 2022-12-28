@@ -15,6 +15,6 @@ my $newpassword = $q->param('newpassword');
     
     $dbh->disconnect;
 
-    print "Location: ../login.html \n\n";
+    print "Location: ../index.html \n\n";
 
 

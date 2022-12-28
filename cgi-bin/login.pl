@@ -23,13 +23,13 @@ else{
 
     if(@array != 0){
         if($array[0] eq "admin" && $array[1] eq "admin"){
-            print "Location: ./inicioAdmin.html \n\n";
+            print "Location: ../inicioAdmin.html \n\n";
         }
         else{
-            print "Location: ./inicio.html \n\n";
+            print "Location: ../inicio.html \n\n";
         }
     }
     else{
-        print "Location: ../login2.html \n\n";
+        print "Location: ../login.html \n\n";
     }
 }
