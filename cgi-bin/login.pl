@@ -26,7 +26,7 @@ else{
             print "Location: ./inicioAdmin.pl \n\n";
         }
         else{
-            print "Location: ../inicio.html \n\n";
+            print "Location: ./inicio.pl \n\n";
         }
     }
     else{

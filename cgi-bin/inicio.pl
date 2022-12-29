@@ -1,3 +1,4 @@
+print<<HTML;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,3 +11,4 @@
     </header>
 </body>
 </html>
+HTML

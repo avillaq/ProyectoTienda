@@ -44,7 +44,10 @@ print<<HTML;
     <title>Document</title>
 </head>
 <body>
+    <header>
     <a href='inicioAdmin.pl'>Usuarios</a>
+    <a href='inicioAdmin.pl'>Productos</a>
+    </header>
     <ul>$Namelist</ul>
     
 </body>
