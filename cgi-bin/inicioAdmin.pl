@@ -9,17 +9,33 @@ my $dbh = DBI->connect($dsn, "Alex", "") or die "No se pudo conectar";
 my $sth = $dbh->prepare("SELECT name FROM usuario");
 $sth->execute();
 
-my @row = $sth->fetchrow_array;
-while (my @as = $sth->fetchrow_array){
-    print @as;
+my $Namelist = "";
+my @array;
+my $i = 0;
+while (my @row = $sth->fetchrow_array){
+    $array[$i] = $row[0];
+    my $name = $row[0];
+
+    $Namelist .= "<li> 
+                    $name 
+                    <form action='./actions/edit.pl' method='get'>
+                    <input type='hidden' name='name' value='$name'>
+                    <input type='submit' value='Editar'>
+                    </form>";
+    if($name ne "admin"){
+       $Namelist .= "<form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='name' value='$name'>
+                    <input type='submit' value='X'>
+                    </form>";
+    }
+    $Namelist .= "</li><br>";
+
+    $i++;
 }
 $sth->finish();
 $dbh->disconnect;
 
-
-
-my $list = list_users(@row);
-
+print "Content-Type: text/html\n\n";
 print<<HTML;
 <!DOCTYPE html>
 <html lang="en">
@@ -28,31 +44,9 @@ print<<HTML;
     <title>Document</title>
 </head>
 <body>
-    <a href="inicioAdmin.pl">Usuarios</a>
-    <ul>$list</ul>
+    <a href='inicioAdmin.pl'>Usuarios</a>
+    <ul>$Namelist</ul>
     
 </body>
 </html>
 HTML
-
-sub list_users{
-my $Namelist = "";
-foreach my $i (@_){
-    
-    $Namelist .= "<li> 
-                    $i 
-                    <form action='./actions/edit.pl' method='get'>
-                    <input type='hidden' name='$i' value='$i'>
-                    <input type='submit' value='Editar'>
-                    </form>";
-    if($i ne "admin"){
-       $Namelist .= "<form action='./actions/delete.pl' method='get'>
-                    <input type='hidden' name='$i' value='$i'>
-                    <input type='submit' value='X'>
-                    </form>";
-    }
-    $Namelist .= "</li><br>";                 
-
-}
-return $Namelist;
-}
