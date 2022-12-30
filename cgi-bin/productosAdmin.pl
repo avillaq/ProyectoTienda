@@ -72,6 +72,8 @@ print<<HTML;
     <header>
     <a href='usuariosAdmin.pl'>Usuarios</a>
     <a href='productosAdmin.pl'>Productos</a>
+    <a href='../index.html'>Cerrar sesion</a>
+
     </header>
 
     <br>
