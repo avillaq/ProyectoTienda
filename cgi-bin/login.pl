@@ -8,7 +8,7 @@ my $name = $q->param('name');
 my $password = $q->param('password');
 
 if($name eq "" || $password eq ""){
-    print "Location: ../login2.html \n\n";
+    print "Location: ../login.html \n\n";
 }
 else{
     my $dsn = "DBI:mysql:database=datostienda;host=127.0.0.1";
@@ -21,12 +21,13 @@ else{
 
     $dbh->disconnect;
 
+    #Si el array esta vacio significa que no existe el usuario
     if(@array != 0){
         if($array[0] eq "admin" && $array[1] eq "admin"){
             print "Location: ./usuariosAdmin.pl \n\n";
         }
         else{
-            print "Location: ./inicio.pl \n\n";
+            print "Location: ../inicio.html \n\n";
         }
     }
     else{
