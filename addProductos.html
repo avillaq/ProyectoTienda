@@ -5,9 +5,22 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="./cgi-bin/actions/edit.pl" method="get">
-        Nuevo nombre de usuario <input type="text" name="editname" required>
-        <input type="submit" value="Añadir">
+    <header>
+        <a href="./cgi-bin/productosAdmin.pl">Atras</a>
+    </header>
+
+    <form action="./cgi-bin/actions/addProductos.pl" method="get">
+        Categoria: 
+        <select name="category">
+            <option>Calzado</option>
+            <option>Muebles</option>
+            <option>Electrohogar</option>
+            <option>Tecnologia</option>
+        </select><br>
+        Nombre: <input type="text" name="name" required><br>
+        Precio: <input type="number" name="price" required><br>
+        Imagen(url): <input type="text" name="imageURL" required><br>
+        <input type="submit" value="Añadir Producto">
     </form>
 </body>
 </html>

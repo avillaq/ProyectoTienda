@@ -1,6 +1,5 @@
 #!C:/xampp/perl/bin/perl.exe -w
 use strict;
-use CGI;
 use DBI;
 
 my $dsn = "DBI:mysql:database=datostienda;host=127.0.0.1";
