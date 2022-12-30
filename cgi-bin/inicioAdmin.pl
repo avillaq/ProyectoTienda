@@ -16,19 +16,18 @@ while (my @row = $sth->fetchrow_array){
     $array[$i] = $row[0];
     my $name = $row[0];
 
-    $Namelist .= "<li> 
-                    $name 
-                    <form action='./actions/edit.pl' method='get'>
-                    <input type='hidden' name='name' value='$name'>
-                    <input type='submit' value='Editar'>
-                    </form>";
     if($name ne "admin"){
-       $Namelist .= "<form action='./actions/delete.pl' method='get'>
+       $Namelist .= "<li> 
+                    $name
+                    <form action='./actions/delete.pl' method='get'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
-                    </form>";
+                    </form>
+                    </li>";
     }
-    $Namelist .= "</li><br>";
+    else{
+        $Namelist .= "<li>$name</li>";
+    }
 
     $i++;
 }
@@ -46,7 +45,7 @@ print<<HTML;
 <body>
     <header>
     <a href='inicioAdmin.pl'>Usuarios</a>
-    <a href='inicioAdmin.pl'>Productos</a>
+    <a href='productos.pl'>Productos</a>
     </header>
     <ul>$Namelist</ul>
     
