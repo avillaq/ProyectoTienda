@@ -23,7 +23,7 @@ else{
 
     if(@array != 0){
         if($array[0] eq "admin" && $array[1] eq "admin"){
-            print "Location: ./inicioAdmin.pl \n\n";
+            print "Location: ./usuariosAdmin.pl \n\n";
         }
         else{
             print "Location: ./inicio.pl \n\n";

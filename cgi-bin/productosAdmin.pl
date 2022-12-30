@@ -6,9 +6,14 @@ use DBI;
 my $dsn = "DBI:mysql:database=datostienda;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "Alex", "") or die "No se pudo conectar";
     
-my $sth = $dbh->prepare("SELECT name FROM usuario");
+my $sth = $dbh->prepare("SELECT * FROM productos");
 $sth->execute();
+
+while (my @row = $sth->fetchrow_array){
+    print @row."\n";
+}
  
+=pod
 my $Namelist = "";
 my @array;
 my $i = 0;
@@ -31,6 +36,7 @@ while (my @row = $sth->fetchrow_array){
 
     $i++;
 }
+=cut
 $sth->finish();
 $dbh->disconnect;
 
@@ -44,10 +50,9 @@ print<<HTML;
 </head>
 <body>
     <header>
-    <a href='inicioAdmin.pl'>Usuarios</a>
-    <a href='productos.pl'>Productos</a>
+
     </header>
-    <ul>$Namelist</ul>
+    <ul></ul>
     
 </body>
 </html>
