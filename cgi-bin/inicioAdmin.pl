@@ -8,7 +8,7 @@ my $dbh = DBI->connect($dsn, "Alex", "") or die "No se pudo conectar";
     
 my $sth = $dbh->prepare("SELECT name FROM usuario");
 $sth->execute();
-
+ 
 my $Namelist = "";
 my @array;
 my $i = 0;
