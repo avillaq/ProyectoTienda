@@ -21,6 +21,7 @@ while (my @row = $sth->fetchrow_array){
         $Calzado .= "<li> 
                     $name
                     <form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
@@ -30,6 +31,7 @@ while (my @row = $sth->fetchrow_array){
         $Muebles .= "<li> 
                     $name
                     <form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
@@ -38,6 +40,7 @@ while (my @row = $sth->fetchrow_array){
         $Electrohogar .= "<li> 
                     $name
                     <form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
@@ -47,6 +50,7 @@ while (my @row = $sth->fetchrow_array){
         $Tecnologia .= "<li> 
                     $name
                     <form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='esUsuario' value='false'>       
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
@@ -67,7 +71,13 @@ print<<HTML;
 </head>
 <body>
     <header>
+    <a href='usuariosAdmin.pl'>Usuarios</a>
+    <a href='productosAdmin.pl'>Productos</a>
     </header>
+
+    <br>
+    <a href='../addProductos.html'>Añadir Productos</a>
+
     <ul>
     Calzado
         <ul>

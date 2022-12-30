@@ -17,6 +17,7 @@ while (my @row = $sth->fetchrow_array){
        $Namelist .= "<li> 
                     $name
                     <form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='esUsuario' value='true'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
