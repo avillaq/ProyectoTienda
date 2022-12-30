@@ -10,10 +10,7 @@ my $sth = $dbh->prepare("SELECT name FROM usuario");
 $sth->execute();
  
 my $Namelist = "";
-my @array;
-my $i = 0;
 while (my @row = $sth->fetchrow_array){
-    $array[$i] = $row[0];
     my $name = $row[0];
 
     if($name ne "admin"){
@@ -29,7 +26,6 @@ while (my @row = $sth->fetchrow_array){
         $Namelist .= "<li>$name</li>";
     }
 
-    $i++;
 }
 $sth->finish();
 $dbh->disconnect;

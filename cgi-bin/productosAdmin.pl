@@ -9,20 +9,16 @@ my $dbh = DBI->connect($dsn, "Alex", "") or die "No se pudo conectar";
 my $sth = $dbh->prepare("SELECT * FROM productos");
 $sth->execute();
 
-while (my @row = $sth->fetchrow_array){
-    print @row."\n";
-}
- 
-=pod
-my $Namelist = "";
-my @array;
-my $i = 0;
-while (my @row = $sth->fetchrow_array){
-    $array[$i] = $row[0];
-    my $name = $row[0];
+my $Calzado = "";
+my $Muebles = "";
+my $Electrohogar = "";
+my $Tecnologia = "";
 
-    if($name ne "admin"){
-       $Namelist .= "<li> 
+my $name = "";
+while (my @row = $sth->fetchrow_array){
+    $name = $row[1];
+    if($row[0] eq "Calzado"){
+        $Calzado .= "<li> 
                     $name
                     <form action='./actions/delete.pl' method='get'>
                     <input type='hidden' name='name' value='$name'>
@@ -30,13 +26,34 @@ while (my @row = $sth->fetchrow_array){
                     </form>
                     </li>";
     }
-    else{
-        $Namelist .= "<li>$name</li>";
+    elsif($row[0] eq "Muebles"){
+        $Muebles .= "<li> 
+                    $name
+                    <form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='name' value='$name'>
+                    <input type='submit' value='X'>
+                    </form>
+                    </li>";    }
+    elsif($row[0] eq "Electrohogar"){
+        $Electrohogar .= "<li> 
+                    $name
+                    <form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='name' value='$name'>
+                    <input type='submit' value='X'>
+                    </form>
+                    </li>"; 
     }
-
-    $i++;
+    elsif($row[0] eq "Tecnologia"){
+        $Tecnologia .= "<li> 
+                    $name
+                    <form action='./actions/delete.pl' method='get'>
+                    <input type='hidden' name='name' value='$name'>
+                    <input type='submit' value='X'>
+                    </form>
+                    </li>"; 
+    }    
 }
-=cut
+ 
 $sth->finish();
 $dbh->disconnect;
 
@@ -50,9 +67,25 @@ print<<HTML;
 </head>
 <body>
     <header>
-
     </header>
-    <ul></ul>
+    <ul>
+    Calzado
+        <ul>
+        $Calzado
+        </ul>
+    Muebles
+        <ul>
+        $Muebles
+        </ul>
+    Electrohogar
+    <ul>
+        $Electrohogar
+        </ul>
+    Tecnologia
+        <ul>
+        $Tecnologia
+        </ul>
+    </ul>
     
 </body>
 </html>
