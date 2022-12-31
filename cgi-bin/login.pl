@@ -27,7 +27,7 @@ else{
             print "Location: ./usuariosAdmin.pl \n\n";
         }
         else{
-            print "Location: ../inicio.html \n\n";
+            print "Location: ./inicio.pl \n\n";
         }
     }
     else{
