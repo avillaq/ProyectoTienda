@@ -19,7 +19,7 @@ while (my @row = $sth->fetchrow_array){
     if($row[0] eq "Calzado"){
         $Calzado .= "<li> 
                     $name
-                    <form action='./actions/delete.pl' method='get'>
+                    <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
@@ -29,7 +29,7 @@ while (my @row = $sth->fetchrow_array){
     elsif($row[0] eq "Muebles"){
         $Muebles .= "<li> 
                     $name
-                    <form action='./actions/delete.pl' method='get'>
+                    <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
@@ -38,7 +38,7 @@ while (my @row = $sth->fetchrow_array){
     elsif($row[0] eq "Electrohogar"){
         $Electrohogar .= "<li> 
                     $name
-                    <form action='./actions/delete.pl' method='get'>
+                    <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
@@ -48,7 +48,7 @@ while (my @row = $sth->fetchrow_array){
     elsif($row[0] eq "Tecnologia"){
         $Tecnologia .= "<li> 
                     $name
-                    <form action='./actions/delete.pl' method='get'>
+                    <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='false'>       
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>

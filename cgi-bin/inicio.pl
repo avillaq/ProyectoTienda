@@ -5,6 +5,8 @@ use DBI;
 #Link del video
 #https://www.youtube.com/watch?v=UH7Xtn4J5ZM
 
+#Productos sacados de https://juntoz.com/
+
 my $dsn = "DBI:mysql:database=datostienda;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "Alex", "") or die "No se pudo conectar";
     
@@ -36,7 +38,7 @@ print<<HTML;
 </head>
 <body>
     <div class="wrap">
-        <h1>InmaduroDev</h1>
+        <h1>InmaduroDev Store</h1>
         <div class="store-wrap">
             <div class="category_list">
                 <a href="#" class="category_item" category="all">Todo</a>
@@ -44,6 +46,7 @@ print<<HTML;
                 <a href="#" class="category_item" category="Muebles">Muebles</a>
                 <a href="#" class="category_item" category="Electrohogar">Electrohogar</a>
                 <a href="#" class="category_item" category="Tecnologia">Tecnologia</a>
+                <a href="../index.html" class="category_item">Cerrar sesion</a>
             </div>
             <section class="products_list">
                 $ListaProductos

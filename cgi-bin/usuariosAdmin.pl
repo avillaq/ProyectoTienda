@@ -15,7 +15,7 @@ while (my @row = $sth->fetchrow_array){
     if($name ne "admin"){
        $Namelist .= "<li> 
                     $name
-                    <form action='./actions/delete.pl' method='get'>
+                    <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='true'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
