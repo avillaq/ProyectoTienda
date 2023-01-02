@@ -13,17 +13,17 @@ while (my @row = $sth->fetchrow_array){
     my $name = $row[0];
 
     if($name ne "admin"){
-       $Namelist .= "<li> 
+       $Namelist .= "<li class='item'> 
                     $name
                     <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='true'>
                     <input type='hidden' name='name' value='$name'>
-                    <input type='submit' value='X'>
+                    <input class='boton' type='submit' value='X'>
                     </form>
                     </li>";
     }
     else{
-        $Namelist .= "<li>$name</li>";
+        $Namelist .= "<li class='item'>$name</li>";
     }
 
 }
@@ -38,15 +38,29 @@ print<<HTML;
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/usuarios.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-    <a href='usuariosAdmin.pl'>Usuarios</a>
-    <a href='productosAdmin.pl'>Productos</a>
-    <a href='../index.html'>Cerrar sesion</a>
-    </header>
-    <ul>$Namelist</ul>
+    <div class="wrap">
+
+     <div class="titulo">
+        <h1>Bienvenido</h1>
+        <hr>
+    </div>
+    <div class="elementos">
+        <div class="opcionesList">
+            <a class="opcion" href='usuariosAdmin.pl'>Usuarios</a>
+            <a class="opcion" href='productosAdmin.pl'>Productos</a>
+            <a class="opcion" href='../index.html'>Cerrar sesion</a>
+        </div>
+        <div class="nombresList">
+            <ul class="itemsList">$Namelist</ul>
+        </div>
+    </div>
+        
+    </div>
+    
     
 </body>
 </html>
