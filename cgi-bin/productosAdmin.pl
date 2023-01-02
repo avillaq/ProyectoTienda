@@ -66,6 +66,8 @@ print<<HTML;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../styles/general.css">
     <title>Document</title>
 </head>
 <body>

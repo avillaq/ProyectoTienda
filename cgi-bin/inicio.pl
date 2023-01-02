@@ -42,8 +42,9 @@ print<<HTML;
 
 
     <title>InmaduroDev Store</title>
-    
-    <link rel="stylesheet" href="../styles/style.css">
+
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/principal.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="../script/script.js"></script>
 </head>

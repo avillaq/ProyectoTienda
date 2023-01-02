@@ -2,13 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/loginRegister.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="./cgi-bin/register.pl" method="post">
-        Nombre de usuario <input type="text" name="newname" required>
-        Contraseña <input type="password" name="newpassword" required>
-        <input type="submit" value="crear cuenta">
-    </form>
+    
+    <div class="wrap">
+        <div class="container">
+            <h1>Crear cuenta</h1>
+            <hr>
+            <form action="./cgi-bin/register.pl" method="post" class="form">
+                <input type="text" class="itemCampo" name="newname" placeholder="Nuevo usuario" required>
+                <input type="password" class="itemCampo" name="newpassword" placeholder="Contraseña" required>
+                <input type="submit" class="itemSubmit" value="Nueva cuenta">
+            </form>
+            <a href="index.html">Iniciar Sesion</a>
+            <hr>
+        </div>
+        
+    </div>
 </body>
 </html>
