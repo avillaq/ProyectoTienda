@@ -12,8 +12,8 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: auto;
-    /*background: blue;*/
 }
+/* Titulo*/
 .wrap > h1 {
     color: #494B4D;
     font-weight: 400;
@@ -22,6 +22,7 @@ body {
     text-align: center;
     margin: 15px 0px;
 }
+/*Linea horizontal*/
 .wrap > h1::after{
     content: '';
     width: 100%;
@@ -33,13 +34,12 @@ body {
 .store-wrap{
     display: flex;
 }
-/* Cambio en width 18%*/
+/*CAategorias ==========================*/
 .category_list{
     display: flex;
     flex-direction: column;
     width: 10%;
 }
-/*cambio en width = 90  ahora esta en 100% */
 .category_list .category_item{
     display: block;
     padding: 15px 0px;
@@ -55,7 +55,7 @@ body {
     background: #2D3E50;
 }
 
-/*Productos ====================*/
+/*Productos ===============================*/
 .products_list{
     width: 75%;
     display: flex;
@@ -75,32 +75,32 @@ body {
 .products_list .product-item img{ 
     width: 100%;
 }
-.products_list .product-item a{ 
-    display: block;
-    width: 100%;
-    padding: 8px 0px;
-    background: #2D3E50;
-
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-}
-/*Lo que yo añadi a la pagina*/
-
+/*Estilo Generales*/
+/*Para el nombre, precio  y  añadir al carrito de los productos*/
 .products_list .product-item p{ 
     width: 100%;
-    padding: 5px 0px;
-    background: white;
-
-    color: red;
-    font-weight: bold;
+    padding: 8px 0px;
+    cursor: pointer;
     text-align: center;
+}
+/*Estilo especificos*/
+/*Estilos para el nombre, precio  y añadir al carrito de los productos*/
+.products_list .product-item .nombre{ 
+    background: #2D3E50;
+    color: #fff;
+}
+.products_list .product-item .precio{ 
+    font-weight: bold;
+    padding: 3px 0px;
+    background: white;
+    color: red;
 }
 .products_list .product-item .comprar{ 
     background: orangered;
+    color: white;
 }
 
-/*Shopping*/
+/*Shopping ===============================================*/
 .shopping{
     display: flex;
     flex-direction: column;
@@ -135,7 +135,3 @@ body {
     text-align: center;
     color: #fff;
 }
-
-/*//////////////////**********/
-
-

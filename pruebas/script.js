@@ -23,8 +23,7 @@ $(document).ready(function(){
 
     //Funcion para añadir al carrito
     $('.product-item .comprar').click(function(){
-
-        var price = document.getElementById('precio').innerHTML.substring(3);
+        var price = $(this).attr('precio');
         price = parseFloat(price);
 
         var totalCompras = document.getElementById('totalCompras').innerHTML.substring(3);

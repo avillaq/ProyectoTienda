@@ -17,9 +17,9 @@ my $ListaProductos = "";
 while (my @row = $sth->fetchrow_array){
     $ListaProductos .= "<div class='product-item' category=$row[0]>
                 <img src=$row[3] alt=''>
-                <a href='#'>$row[1]</a>
-                <p id='precio'>S/ $row[2]</p>
-                <a href='#'class='comprar'>Añadir al carrito</a>
+                <p class='nombre'>$row[1]</p>
+                <p class='precio'>S/ $row[2]</p>
+                <p class='comprar' precio=$row[2]>Añadir al carrito</p>
                 </div>"; 
 }
  
@@ -33,6 +33,14 @@ print<<HTML;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!- Para eliminar cache y se apliquen los cambios en la pagina ->
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+
     <title>InmaduroDev Store</title>
     
     <link rel="stylesheet" href="../styles/style.css">
@@ -59,7 +67,7 @@ print<<HTML;
                     <p id="totalCompras">S/ 0.0</p>
                  </div>
                 <a href="#" onclick="alert('Gracias por su compra')">Procesar Compra</a>
-                <a href="#">Cerrar Sesion</a> 
+                <a href="../index.html">Cerrar Sesion</a> 
             </div>
         </div>
     </div>
