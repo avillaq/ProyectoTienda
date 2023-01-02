@@ -18,6 +18,8 @@ while (my @row = $sth->fetchrow_array){
     $ListaProductos .= "<div class='product-item' category=$row[0]>
                 <img src=$row[3] alt=''>
                 <a href='#'>$row[1]</a>
+                <p id='precio'>S/ $row[2]</p>
+                <a href='#'class='comprar'>Añadir al carrito</a>
                 </div>"; 
 }
  
@@ -30,7 +32,8 @@ print<<HTML;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mi tienda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InmaduroDev Store</title>
     
     <link rel="stylesheet" href="../styles/style.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
@@ -46,11 +49,18 @@ print<<HTML;
                 <a href="#" class="category_item" category="Muebles">Muebles</a>
                 <a href="#" class="category_item" category="Electrohogar">Electrohogar</a>
                 <a href="#" class="category_item" category="Tecnologia">Tecnologia</a>
-                <a href="../index.html" class="category_item">Cerrar sesion</a>
             </div>
             <section class="products_list">
                 $ListaProductos
             </section>
+            <div class='shopping'>
+                 <div class="carrito">
+                    <img src="https://cdn-icons-png.flaticon.com/128/7168/7168070.png" alt="">
+                    <p id="totalCompras">S/ 0.0</p>
+                 </div>
+                <a href="#" onclick="alert('Gracias por su compra')">Procesar Compra</a>
+                <a href="#">Cerrar Sesion</a> 
+            </div>
         </div>
     </div>
     

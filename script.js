@@ -20,6 +20,7 @@ $(document).ready(function(){
     $('.category_item[category="all"]').click(function() {
         $('.product-item').show();
     });
+
     //Funcion para añadir al carrito
     $('.product-item .comprar').click(function(){
 
