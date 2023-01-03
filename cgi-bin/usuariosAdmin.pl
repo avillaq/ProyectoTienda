@@ -13,17 +13,23 @@ while (my @row = $sth->fetchrow_array){
     my $name = $row[0];
 
     if($name ne "admin"){
-       $Namelist .= "<li class='item'> 
-                    $name
+       $Namelist .= "<li>
+                    <div class='item'>
+                    <label>$name</label>
                     <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='true'>
                     <input type='hidden' name='name' value='$name'>
-                    <input class='boton' type='submit' value='X'>
+                    <input type='submit' value='X'>
                     </form>
+                    </div>
                     </li>";
     }
     else{
-        $Namelist .= "<li class='item'>$name</li>";
+        $Namelist .= "<li>
+                    <div class='item'>
+                    <label>$name</label> 
+                    </div>
+                    </li>";
     }
 
 }
@@ -55,7 +61,7 @@ print<<HTML;
             <a class="opcion" href='../index.html'>Cerrar sesion</a>
         </div>
         <div class="nombresList">
-            <ul class="itemsList">$Namelist</ul>
+            <ul>$Namelist</ul>
         </div>
     </div>
         

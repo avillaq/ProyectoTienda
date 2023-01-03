@@ -47,22 +47,32 @@
     margin-left: 10%;
     width: 70%;
 }
-.itemsList{
+
+/*Estilo para el div item que contiene al label y boton*/
+.nombresList .item{
     display: flex;
-    flex-direction: column;
-}
-.itemsList .item{
-    display: flex;
-    flex-direction: row;
     padding: 10px;
     background: rgb(207, 202, 203);
-
     margin-bottom: 10px;
-    padding-left: 20px;   
-    padding-right: 100px;
-
 }
-.item .boton{
-    margin-left: 100%;
-    background: red;
+
+/*Elimina puntos de la lista*/
+li{
+    list-style:none;
+}
+
+/*Estilo para la etiqueta del nombre  */
+label{
+    width: 90%;
+    font-size: larger;
+}
+
+/*Estilo para los botones*/
+input{
+    background: black;
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+    color: white;
 }
