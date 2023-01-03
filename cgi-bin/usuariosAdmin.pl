@@ -45,13 +45,13 @@ print<<HTML;
 
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/usuarios.css">
-    <title>Document</title>
+    <title>InmaduroDev Store</title>
 </head>
 <body>
     <div class="wrap">
 
      <div class="titulo">
-        <h1>Bienvenido</h1>
+        <h1>Administrador</h1>
         <hr>
     </div>
     <div class="elementos">

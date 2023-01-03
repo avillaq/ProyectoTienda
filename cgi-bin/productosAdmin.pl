@@ -18,41 +18,49 @@ while (my @row = $sth->fetchrow_array){
     $name = $row[1];
     if($row[0] eq "Calzado"){
         $Calzado .= "<li> 
-                    $name
+                    <div class='item'>
+                    <label>$name</label>
                     <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
+                    </div>
                     </li>";
     }
     elsif($row[0] eq "Muebles"){
-        $Muebles .= "<li> 
-                    $name
+        $Muebles .= "<li>
+                    <div class='item'> 
+                    <label>$name</label>
                     <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
+                    </div>
                     </li>";    }
     elsif($row[0] eq "Electrohogar"){
-        $Electrohogar .= "<li> 
-                    $name
+        $Electrohogar .= "<li>
+                    <div class='item'> 
+                    <label>$name</label>
                     <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='false'>
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
+                    </div>
                     </li>"; 
     }
     elsif($row[0] eq "Tecnologia"){
         $Tecnologia .= "<li> 
-                    $name
+                    <div class='item'>
+                    <label>$name</label>
                     <form action='./actions/delete.pl' method='post'>
                     <input type='hidden' name='esUsuario' value='false'>       
                     <input type='hidden' name='name' value='$name'>
                     <input type='submit' value='X'>
                     </form>
+                    </div>
                     </li>"; 
     }    
 }
@@ -68,38 +76,57 @@ print<<HTML;
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="../styles/general.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/productos.css">
+    <title>InmaduroDev Store</title>
 </head>
 <body>
-    <header>
-    <a href='usuariosAdmin.pl'>Usuarios</a>
-    <a href='productosAdmin.pl'>Productos</a>
-    <a href='../index.html'>Cerrar sesion</a>
+    <div class="wrap">
 
-    </header>
+     <div class="titulo">
+        <h1>Administrador</h1>
+        <hr>
+    </div>
+    <div class="elementos">
+        <div class="opcionesList">
+            <a class="opcion" href='usuariosAdmin.pl'>Usuarios</a>
+            <a class="opcion" href='productosAdmin.pl'>Productos</a>
+            <a class="opcion" href='../index.html'>Cerrar sesion</a>
+        </div>
 
-    <br>
-    <a href='../addProductos.html'>Añadir Productos</a>
+    <div class="nombresList">
+        <ul>
+            <li>
+                <h2>Calzado</h2>
+                <ul>
+                $Calzado
+                </ul>
+            </li>
+            <li>
+                <h2>Muebles</h2>
+                <ul>
+                $Muebles
+                </ul>
+            </li>
+            <li>
+                <h2>Electrohogar</h2>
+                <ul>
+                $Electrohogar
+                </ul>
+             </li>
+            <li>
+                <h2>Tecnologia</h2>
+                 <ul>
+                $Tecnologia
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class='añadir'>
+        <a href='../addProductos.html'>Añadir</a>
+    </div>
 
-    <ul>
-    Calzado
-        <ul>
-        $Calzado
-        </ul>
-    Muebles
-        <ul>
-        $Muebles
-        </ul>
-    Electrohogar
-    <ul>
-        $Electrohogar
-        </ul>
-    Tecnologia
-        <ul>
-        $Tecnologia
-        </ul>
-    </ul>
-    
+    </div>
+    </div>
 </body>
 </html>
 HTML

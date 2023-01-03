@@ -1,0 +1,64 @@
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    width: 70%;
+}
+.titulo > h1 {
+    color: #323436;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 15px 0px;
+}
+.titulo > hr {
+    height: 1px;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+.elementos {
+    display: flex;
+    margin-left: 15%;
+    width: 70%;
+}
+/*Boton atras=============================*/
+.botonAtras {
+    width: 20%;
+    margin-right: 20%;
+}
+.botonAtras a{
+    display: block;
+    padding: 15px 0px;
+    background: red;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
+
+/*Formulario ========================*/
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+label{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+input , select{
+    margin-bottom: 10px;
+    height: 40px;
+        /*Bordes*/
+    border: 2px solid rgb(1, 123, 173);
+    
+    padding-left: 10px;
+    font-size: medium;
+    outline: none;
+}
+ input[type="submit"]{
+    cursor: pointer;
+ }

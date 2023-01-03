@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="./styles/general.css">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <a href="./cgi-bin/productosAdmin.pl">Atras</a>
-    </header>
+    <link rel="stylesheet" href="./styles/addProductos.css">
 
-    <form action="./cgi-bin/actions/addProductos.pl" method="post">
-        Categoria: 
-        <select name="category">
-            <option>Calzado</option>
-            <option>Muebles</option>
-            <option>Electrohogar</option>
-            <option>Tecnologia</option>
-        </select><br>
-        Nombre: <input type="text" name="name" required><br>
-        Precio: <input type="number" name="price" required><br>
-        Imagen(url): <input type="text" name="imageURL" required><br>
-        <input type="submit" value="Añadir Producto">
-    </form>
+    <title>InmaduroDev Store</title>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="titulo">
+            <h1>Administrador</h1>
+            <hr>
+        </div>
+
+        <div class="elementos">
+            <div class="botonAtras">
+                <a href="./cgi-bin/productosAdmin.pl">Atras</a>
+            </div>
+
+            <form action="./cgi-bin/actions/addProductos.pl" method="post">
+                <label>Categoria:</label>
+                <select name="category" id="category">
+                    <option>Calzado</option>
+                    <option>Muebles</option>
+                    <option>Electrohogar</option>
+                    <option>Tecnologia</option>
+                </select>
+                <label>Nombre del producto:</label>
+                <input type="text" name="name" required>
+                <label>Precio:</label>
+                <input type="number" name="price" required>
+                <label>Imagen (URL):</label>
+                <input type="text" name="imageURL" required>
+                <input class="botonSubmit" type="submit" value="Añadir Producto">
+            </form>
+        </div>
+
+    </div>
 </body>
+
 </html>
