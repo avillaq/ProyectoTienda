@@ -31,6 +31,6 @@ else{
         }
     }
     else{
-        print "Location: ../login.html \n\n";
+        print "Location: ../index.html \n\n";
     }
 }
