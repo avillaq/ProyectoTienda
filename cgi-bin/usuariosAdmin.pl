@@ -3,7 +3,7 @@ use strict;
 use DBI;
 
 my $dsn = "DBI:mysql:database=datostienda;host=127.0.0.1";
-my $dbh = DBI->connect($dsn, "Alex", "") or die "No se pudo conectar";
+my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";
     
 my $sth = $dbh->prepare("SELECT name FROM usuario");
 $sth->execute();
